@@ -28,25 +28,26 @@ Se realizo un a tabla con los benchmark que iutilizamos duante la carrera y con 
 	Intel Core i5-13600K
 	AMD Ryzen 9 5900X 12-Core
 
- De la pagina de [OpenBenchmarking](https://openbenchmarking.org/test/pts/build-linux-kernel-1.15.0) obtuviomos algunos datos de los procesadores Intel Core i5-13600K y AMD Ryzen 9 5900X 12-Core, visibles en la siguiente tabla: 
+ De la página de [OpenBenchmarking](https://openbenchmarking.org/test/pts/build-linux-kernel-1.15.0) obtuviomos algunos datos de los procesadores Intel Core i5-13600K y AMD Ryzen 9 5900X 12-Core, visibles en la siguiente tabla: 
  
 | **Procesador**            | **Ranking Percentil** | **Resultados Públicos Compatibles** | **Segundos (Promedio)** |
 |---------------------------|-----------------------|----------------------------------|----------------------------|
 | Intel Core i5 13600K      | 53                    | 8                                | 83 ± 3                     |
 | AMD Ryzen 9 5900X         | 48                    | 36                               | 97 ± 6                     |
 
-y tambien un gr[afico dodne se comparan ambos procesadores 
+y tambien un gráfico donde se comparan ambos procesadores 
+![image](https://github.com/user-attachments/assets/b9d83e25-9e8e-444b-9a6f-c74fe487144f)
 
-con esto podemos calcular el rendimiento de los procesadores relacionanodlos con el tiempo de ejecución:
-
+Con esto podemos calcular el rendimiento de los procesadores relacionanodlos con el tiempo de ejecución:
 $$
 \eta_{i5} = \frac{1}{T_{EX_1}} = \frac{1}{83} = 1.204%,
 \quad
+$$ $$
 \eta_{Ry9} = \frac{1}{T_{EX_2}} = \frac{1}{97} = 1.030%
 $$
 
 Donde:
-- \( \eta_1 \) y \( \eta_2 \) son las eficiencias de los dos procesadores. 
+- $$\( \eta_1 \)$$ y $$\( \eta_2 \)$$ son las eficiencias de los dos procesadores. 
 - \( T_{EX_1} \) y \( T_{EX_2} \) son los tiempos de ejecución de cada procesador.
 
 
