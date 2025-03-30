@@ -57,3 +57,59 @@ Donde:
 Ejecutar un código que demore alrededor de 10 segundos. Puede ser un bucle for con sumas de enteros por un lado y otro con suma de floats por otro lado.
 ¿Qué sucede con el tiempo del programa al duplicar (variar) la frecuencia ? 
 
+Se ejecutó el siguiente código en una ESP32 
+```
+#include "Arduino.h"
+#include "esp_system.h" 
+#include "esp32/clk.h" 
+
+void benchmark(int freq) {
+    Serial.println("\n---------------------\n");
+
+    // Cambiar la frecuencia de la CPU
+    setCpuFrequencyMhz(freq);  
+    delay(500);  
+
+    Serial.flush(); 
+    delay(100);
+
+    uint32_t startTime, elapsedTime;
+    int repeticiones = 10000;  
+    volatile int suma = 0; 
+
+    startTime = micros();  // Inicio de medición de tiempo
+    for (int j = 0; j < repeticiones; j++) {
+        suma = 0;
+        for (int i = 1; i <= 30; i++) {
+            suma += i;
+        }
+    }
+    elapsedTime = micros() - startTime; 
+    float tiempoPromedio = elapsedTime / (float)repeticiones;  
+    float rendimiento = tiempoPromedio > 0 ? (1.0 / tiempoPromedio) : 0;
+
+    //Resultados
+    Serial.print("Frecuencia CPU: ");
+    Serial.print(getCpuFrequencyMhz());  
+    Serial.print(" MHz -> Tiempo: ");
+    Serial.print(tiempoPromedio, 6);
+    Serial.print(" us -> Rendimiento: ");
+    Serial.print(rendimiento, 6);
+    Serial.println(" ops/us");
+}
+
+void setup() {
+    Serial.begin(115200);
+    delay(2000);  // Esperar inicio de Serial
+
+    // Ejecutando para diferentes frecuencias
+    benchmark(40);   // Baja frecuencia
+    benchmark(80);   // Media
+    benchmark(160);  // Alta
+    benchmark(240);  // Máxima para ESP32
+}
+
+void loop() {}
+```
+obteniendo los siguientes resultados:
+![image](https://github.com/user-attachments/assets/30f3e1f4-10ff-40e3-8b9a-a9fde96578d7)
