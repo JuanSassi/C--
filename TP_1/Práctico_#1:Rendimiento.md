@@ -40,9 +40,7 @@ y tambien un gráfico donde se comparan ambos procesadores:
 ![image](https://github.com/user-attachments/assets/b9d83e25-9e8e-444b-9a6f-c74fe487144f)
 
 Con esto podemos calcular el rendimiento de los procesadores relacionanodlos con el tiempo de ejecución:
-$$
-\eta_{i5} = \frac{1}{T_{EX_1}} = \frac{1}{83} = 1.204%,  \quad   \eta_{Ry9} = \frac{1}{T_{EX_2}} = \frac{1}{97} = 1.030%
-$$
+$$ \eta_{i5} = \frac{1}{T_{EX_1}} = \frac{1}{83} = 1.204%,  \quad   \eta_{Ry9} = \frac{1}{T_{EX_2}} = \frac{1}{97} = 1.030% $$
 
 Donde:
 - $$\( \eta_1 \)$$ y $$\( \eta_2 \)$$ son las eficiencias de los dos procesadores. 
