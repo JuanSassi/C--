@@ -42,7 +42,6 @@ Con esto podemos calcular el rendimiento de los procesadores relacionanodlos con
 $$
 \eta_{i5} = \frac{1}{T_{EX_1}} = \frac{1}{83} = 1.204%,
 \quad
-$$ $$
 \eta_{Ry9} = \frac{1}{T_{EX_2}} = \frac{1}{97} = 1.030%
 $$
 
