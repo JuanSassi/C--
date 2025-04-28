@@ -62,6 +62,10 @@ Permite que el programa se ejecute correctamente en el hardware específico, por
 ## Tema 3 - Modo Protegido
 El modo protegido es un modo de operación de los procesadores x86 introducido con el Intel 80286. Su principal objetivo es mejorar la estabilidad y seguridad del sistema al permitir características como la protección de memoria, segmentación avanzada y paginación. En este modo, el sistema operativo puede evitar que un programa acceda a áreas de memoria no autorizadas, lo que protege tanto al núcleo del sistema como a otros procesos en ejecución.
 
+### Crear un código assembler que pueda pasar a modo protegido (sin macros).
+
+** Pendiente ** 
+
 ### ¿Cómo sería un programa que tenga dos descriptores de memoria diferentes, uno para cada segmento (código y datos) en espacios de memoria diferenciados? 
 
 En modo protegido, se puede crear un programa que defina dos descriptores en la Global Descriptor Table (GDT), uno de segmento de código (Configurado con permisos de ejecución y lectura), y otro de segmento de datos (Configurado inicialmente con permisos de lectura y escritura).
@@ -72,6 +76,7 @@ Cada descriptor especifica la base, el límite y los permisos del segmento. El p
 
 ### Cambiar los bits de acceso del segmento de datos para que sea de solo lectura,  intentar escribir, ¿Que sucede? ¿Que debería suceder a continuación? (revisar el teórico) Verificarlo con gdb. 
 
+** Pendiente **
 
 
 ### En modo protegido, ¿Con qué valor se cargan los registros de segmento ? ¿Porque? 
