@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+
+.bandera-item {
+    margin: 20px 0;
+}
+.banderas img {
+    width: 180px;
+    cursor: pointer;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.banderas img:hover {
+    transform: scale(1.1);
+}
+
+.popup {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+#popup-content {
+    position: relative;
+}
+
+#close-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+

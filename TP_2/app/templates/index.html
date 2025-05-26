@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Índice GINI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Índice GINI por país (2020)</h1>
+
+        <div class="banderas">
+            <div class="bandera-item">
+                <img src="{{ url_for('static', filename='images/ar.png') }}" onclick="obtenerGini('AR')" alt="Argentina">
+            </div>
+            <div class="bandera-item">
+                <img src="{{ url_for('static', filename='images/br.png') }}" onclick="obtenerGini('BR')" alt="Brasil">
+            </div>
+            <div class="bandera-item">
+                <img src="{{ url_for('static', filename='images/cl.png') }}" onclick="obtenerGini('CL')" alt="Chile">
+            </div>
+            <div class="bandera-item">
+                <img src="{{ url_for('static', filename='images/uy.png') }}" onclick="obtenerGini('UY')" alt="Uruguay">
+            </div>
+            <div class="bandera-item">
+                <img src="{{ url_for('static', filename='images/mx.png') }}" onclick="obtenerGini('MX')" alt="México">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="popup" class="popup hidden">
+        <div id="popup-content">
+            <span id="close-btn" onclick="cerrarPopup()">×</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-gini"></p>
+            <p id="popup-resultado"></p>
+        </div>
+    </div>
+
+    <script>
+        const colores = {
+            "AR": "#ADD8E6",
+            "BR": "#24a319",
+            "CL": "#d80000", 
+            "UY": "#1E90FF", 
+            "MX": "#006400"  
+        };
+
+        const nombres = {
+            "AR": "Argentina",
+            "BR": "Brasil",
+            "CL": "Chile",
+            "UY": "Uruguay",
+            "MX": "México"
+        };
+
+        function obtenerGini(pais) {
+            fetch('/obtener_gini', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ pais: pais })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const [linea1, linea2] = data.resultado.trim().split("\n");
+
+                document.getElementById("popup").style.backgroundColor = colores[pais];
+                document.getElementById("popup-title").innerText = nombres[pais];
+                document.getElementById("popup-gini").innerText = linea1;
+                document.getElementById("popup-resultado").innerText = linea2;
+                document.getElementById("popup").classList.remove("hidden");
+            });
+        }
+
+        function cerrarPopup() {
+            document.getElementById("popup").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
