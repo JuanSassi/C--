@@ -1,0 +1,3 @@
+[submodule "TP_3/protected-mode-sdc"]
+    path = TP_3/protected-mode-sdc
+    url = https://gitlab.com/sistemas-de-computacion-2021/protected-mode-sdc.git
