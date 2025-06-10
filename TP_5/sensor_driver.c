@@ -264,6 +264,6 @@ module_init(sensor_init);
 module_exit(sensor_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Estudiante");
+MODULE_AUTHOR("Grupo C--");
 MODULE_DESCRIPTION("Character Device Driver para sensores duales");
 MODULE_VERSION("1.0");
