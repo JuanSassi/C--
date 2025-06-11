@@ -213,14 +213,14 @@ EOF
 print_status "Instalación completada exitosamente"
 echo
 echo "=== Instrucciones de uso ==="
-echo "1. Cargar el driver:     ./load_driver.sh"
-echo "2. Ejecutar aplicación:  ./run_app.sh"
-echo "3. Descargar driver:     ./unload_driver.sh"
+echo "1. Cargar el driver:     sudo ./load_driver.sh"
+echo "2. Ejecutar aplicación:  sudo ./run_app.sh"
+echo "3. Descargar driver:     sudo ./unload_driver.sh"
 echo
 echo "=== Comandos útiles ==="
 echo "Ver driver cargado:      lsmod | grep sensor"
 echo "Ver dispositivo:         ls -l /dev/sensor_drv"
-echo "Ver mensajes kernel:     dmesg | tail"
+echo "Ver mensajes kernel:     sudo dmesg | tail"
 echo "Compilar driver:         make"
 echo
 echo "El entorno virtual está en: ./venv/"
