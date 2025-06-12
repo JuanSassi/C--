@@ -16,3 +16,4 @@ sensor_driver.mod.o
 sensor_driver.o
 unload_driver.sh
 venv/
+qemu_config.sh
