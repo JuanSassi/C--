@@ -445,7 +445,7 @@ echo "Ver mensajes kernel:     dmesg | grep sensor_drv"
 echo "Configuración QEMU:      cat qemu_config.sh"
 echo
 echo "=== Archivos específicos QEMU creados ==="
-echo "- qemu_config.sh         (configuración QEMU)"
+echo "- qemu_config.sh    (configuración QEMU)"
 echo "- load_driver.sh    (cargar driver en QEMU)"
 echo "- unload_driver.sh  (descargar driver)"
 echo "- run_app.sh        (ejecutar aplicación QEMU)"
